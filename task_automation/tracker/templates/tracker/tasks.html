@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Tasks</title>
+</head>
+<body>
+    <h1>Scheduled Tasks</h1>
+
+    {% for task in tasks %}
+    <p>
+        <strong>{{ task.name }}</strong> -
+        {{ task.frequency }} at {{ task.time }}
+
+        <a href="/delete/{{ task.id }}/" style="color:red; margin-left:10px;">
+            Delete
+        </a>
+    </p>
+{% empty %}
+    <p>No tasks yet.</p>
+{% endfor %}
+
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
